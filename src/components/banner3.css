@@ -1,0 +1,9 @@
+.banner3-container {
+  gap: var(--dl-layout-space-unit);
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-top: var(--dl-layout-space-halfunit);
+  flex-direction: column;
+  padding-bottom: var(--dl-layout-space-halfunit);
+}
