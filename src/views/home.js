@@ -13,11 +13,39 @@ const Home = (props) => {
         <title>welcome-to-megalophobia</title>
         <meta property="og:title" content="welcome-to-megalophobia" />
       </Helmet>
-      <h1 className="home-text">███████ ██ ████████████</h1>
-      <img alt="image" src="/sky1-1500w.png" className="home-image1" />
-      <Banner1></Banner1>
-      <div className="home-container2 number">
+      <div className="home-container2">
         <div className="home-container3">
+          <Script
+            html={`<canvas class="glslCanvas" data-textures="https://i.imgur.com/RoIW4ZQ.png,https://i.imgur.com/8A4w7RV.jpeg" width="1200" height="1240" data-fragment="
+    #ifdef GL_ES
+    precision mediump float;
+    #endif
+
+    uniform vec2 u_resolution;
+    uniform sampler2D u_tex0;
+    uniform sampler2D u_tex1;
+    uniform float u_time;
+
+    void main() 
+    {
+        vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+
+        vec4 noiseA = texture2D(u_tex0, vec2(fract(uv.x / 2. + u_time * 0.1), fract(uv.y / 2. + u_time * 0.05))).rgba;
+        vec4 noiseB = texture2D(u_tex1, vec2(fract(uv.x / 2. - u_time * 0.02), fract(uv.y / 2. - u_time * 0.01))).rgba;
+
+        gl_FragColor = mix(vec4(55., 146., 254., 255.) / 255., vec4(1., 1., 1., 1.), noiseA.r * noiseB.r * 1.3);
+    }
+"></canvas>
+
+<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>`}
+          ></Script>
+        </div>
+      </div>
+      <h1 className="home-text">███████ ██ ████████████</h1>
+      <img alt="image" src="/butt%201-1500w.png" className="home-image1" />
+      <Banner1></Banner1>
+      <div className="home-container4 number">
+        <div className="home-container5">
           <Script
             html={`<p id="demo"></p>
 
@@ -60,9 +88,9 @@ var x = setInterval(function() {
         </div>
       </div>
       <img alt="image" src="/flower%201-1500w.png" className="home-image2" />
-      <img alt="image" src="/butt%201-1500w.png" className="home-image3" />
-      <img alt="image" src="/butt%202-900w.png" className="home-image4" />
-      <img src="/new%20project-200h.png" alt="image" className="home-image5" />
+      <img alt="image" src="/sky1-1500w.png" className="home-image3" />
+      <img alt="image" src="/new%20project-200h.png" className="home-image4" />
+      <img alt="image" src="/butt%202-900w.png" className="home-image5" />
     </div>
   )
 }
